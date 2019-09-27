@@ -32,5 +32,5 @@ package.json
 package-lock.json
 node_modules/
 .vscode/
-.arhiv/
+/arhiv/
 .backup_sql/
