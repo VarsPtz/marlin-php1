@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa635a37-7ef4-460d-a67f-73bf6c13f191" name="Default Changelist" comment="" />
+    <list default="true" id="fa635a37-7ef4-460d-a67f-73bf6c13f191" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +18,9 @@
   <component name="FavoritesManager">
     <favorites_list name="marlin" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1RNs9HL3Ov1g2Q4A8RledHaYRN8" />
   <component name="ProjectViewState">
@@ -23,7 +29,16 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../modules/php/PHP_7.2-x64/php.exe" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -59,6 +74,7 @@
       <updated>1569518734227</updated>
       <workItem from="1569518735664" duration="339000" />
       <workItem from="1569525228585" duration="143000" />
+      <workItem from="1569608688549" duration="2430000" />
     </task>
     <servers />
   </component>
@@ -66,6 +82,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="266" y="21" key="#CLI_Interpreters" timestamp="1569612749691">
+      <screen x="0" y="0" width="1366" height="724" />
+    </state>
+    <state x="266" y="21" key="#CLI_Interpreters/0.0.1366.724/1366.0.1280.1024@0.0.1366.724" timestamp="1569612749691" />
     <state x="411" y="0" key="#PHP" timestamp="1569519031515">
       <screen x="0" y="0" width="1366" height="724" />
     </state>
@@ -74,6 +94,14 @@
       <screen x="0" y="0" width="1366" height="724" />
     </state>
     <state x="497" y="46" key="#index.php/0.0.1366.724/1366.0.1280.1024@0.0.1366.724" timestamp="1569519068649" />
+    <state x="475" y="63" key="FileChooserDialogImpl" timestamp="1569612619677">
+      <screen x="0" y="0" width="1366" height="724" />
+    </state>
+    <state x="475" y="63" key="FileChooserDialogImpl/0.0.1366.724/1366.0.1280.1024@0.0.1366.724" timestamp="1569612619677" />
+    <state x="194" y="0" key="SettingsEditor" timestamp="1569612856378">
+      <screen x="0" y="0" width="1366" height="724" />
+    </state>
+    <state x="194" y="0" key="SettingsEditor/0.0.1366.724/1366.0.1280.1024@0.0.1366.724" timestamp="1569612856378" />
     <state x="394" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1569525350584">
       <screen x="0" y="0" width="1366" height="724" />
     </state>
