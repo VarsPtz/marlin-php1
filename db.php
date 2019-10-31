@@ -20,10 +20,10 @@
         die("Не могу подключиться к базе данных");
     }
 
-//    $sql_query = "SELECT * FROM `comments` WHERE `id`>0";
-//    $sql_query_prepared = $pdo->prepare($sql_query);
-//    $sql_query_prepared->execute();
-//    $array_comments = $sql_query_prepared->fetchAll(PDO::FETCH_ASSOC);
+    $sql_query = "SELECT `name`, `comment` FROM `comments` WHERE `id`>0";
+    $sql_query_prepared = $pdo->prepare($sql_query);
+    $sql_query_prepared->execute();
+    $array_comments = $sql_query_prepared->fetchAll(PDO::FETCH_ASSOC);
 //    echo '<pre>';
 //    var_dump($array_comments);
 //    echo '</pre>';

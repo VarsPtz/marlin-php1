@@ -61,18 +61,17 @@
                                 Комментарий успешно добавлен
                               </div>
 
-                               <?php foreach ($comments as $comment) { ?> 
+                               <?php foreach ($array_comments as $comment) { ?>
                                 <div class="media">
-                                  <img src="<?php echo $comment['user_img'];
-                                            ?>" class="mr-3" alt="..." width="64" height="64">
+<!--                                  <img src="--><?php //echo $comment['user_img'];
+//                                            ?><!--" class="mr-3" alt="..." width="64" height="64">-->
                                   <div class="media-body">
                                     <h5 class="mt-0">
-                                     <?php echo $comment['user_name']." ". $comment['user_surname'];
-                                     ?>
+                                     <?=$comment['name'];?>
                                     </h5>
-                                    <span><small><?php echo date('d/m/Y', strtotime($comment['date_comment'])); ?></small></span>
+<!--                                    <span><small>--><?php //echo date('d/m/Y', strtotime($comment['date_comment'])); ?><!--</small></span>-->
                                     <p>
-                                       <?php echo $comment['user_comment']; ?>
+                                       <?=$comment['comment']; ?>
                                     </p>
                                   </div>
                                 </div>
@@ -118,7 +117,10 @@
     echo '<pre>';
     var_dump($_SESSION['error']);
     echo '</pre>';
-echo '<pre>';
-var_dump($_POST);
-echo '</pre>';
+    echo '<pre>';
+    var_dump($_POST);
+    echo '</pre>';
+    echo '<pre>';
+    var_dump($array_comments);
+    echo '</pre>';
 ?>
