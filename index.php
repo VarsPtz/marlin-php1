@@ -1,28 +1,6 @@
 <?php
-
- $comments = [
-   ['user_id' => 1,
-      'user_name' => 'Chuck',
-      'user_surname' => 'Norris',
-      'user_img' => 'img/Chuck-Norris.jpg',
-      'user_comment' => 'comment 1',
-      'date_comment' => '2019-09-23'],
-
-   ['user_id' => 2,
-      'user_name' => 'Elon',
-      'user_surname' => 'Musk',
-      'user_img' => 'img/Elon-Musk.jpg',
-      'user_comment' => 'comment 2',
-      'date_comment' => '2019-09-24'],
-
-   ['user_id' => 3,
-      'user_name' => 'Janna',
-      'user_surname' => 'Badoeva',
-      'user_img' => 'img/no-user.jpg',
-      'user_comment' => 'comment 3',
-      'date_comment' => '2019-09-25']
- ];
-
+    session_start();
+    require_once 'db.php';
 ?>
 
 <!DOCTYPE html>
@@ -109,16 +87,22 @@
                             <div class="card-header"><h3>Оставить комментарий</h3></div>
 
                             <div class="card-body">
-                                <form action="/store" method="post">
+                                <form action="/add_comment.php" method="post">
                                     <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Имя</label>
                                     <input name="name" class="form-control" id="exampleFormControlTextarea1" />
+                                    <?php if (!empty($_SESSION['error']['name'])) {
+                                        echo '<p>'.$_SESSION['error']['name'].'</p>';
+                                    }; ?>
                                   </div>
                                   <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Сообщение</label>
                                     <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <?php if (!empty($_SESSION['error']['comment'])) {
+                                      echo '<p>'.$_SESSION['error']['comment'].'</p>';
+                                    }; ?>
                                   </div>
-                                  <button type="submit" class="btn btn-success">Отправить</button>
+                                  <button name="btn-add-comment" type="submit" class="btn btn-success">Отправить</button>
                                 </form>
                             </div>
                         </div>
@@ -129,3 +113,12 @@
     </div>
 </body>
 </html>
+
+<?php
+    echo '<pre>';
+    var_dump($_SESSION['error']);
+    echo '</pre>';
+echo '<pre>';
+var_dump($_POST);
+echo '</pre>';
+?>

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa635a37-7ef4-460d-a67f-73bf6c13f191" name="Default Changelist" comment="" />
+    <list default="true" id="fa635a37-7ef4-460d-a67f-73bf6c13f191" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,18 +55,6 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="index.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/marlin/index.php" useBuiltInWebServerPort="true">
       <method v="2" />
@@ -94,6 +85,35 @@
       <workItem from="1569518735664" duration="339000" />
       <workItem from="1569525228585" duration="143000" />
       <workItem from="1569608688549" duration="6551000" />
+      <workItem from="1569839524718" duration="14813000" />
+      <workItem from="1569908456086" duration="7179000" />
+      <workItem from="1569993794022" duration="607000" />
+      <workItem from="1570208174661" duration="481000" />
+      <workItem from="1570256087926" duration="25009000" />
+      <workItem from="1570688094527" duration="15374000" />
+      <workItem from="1570773048555" duration="17193000" />
+      <workItem from="1570968111566" duration="18520000" />
+      <workItem from="1571031656541" duration="22943000" />
+      <workItem from="1571116335698" duration="21782000" />
+      <workItem from="1571200795751" duration="5761000" />
+      <workItem from="1571208870037" duration="18200000" />
+      <workItem from="1571380658022" duration="12459000" />
+      <workItem from="1571478871443" duration="601000" />
+      <workItem from="1571552527957" duration="3011000" />
+      <workItem from="1571634749122" duration="34930000" />
+      <workItem from="1571721249775" duration="32776000" />
+      <workItem from="1571802903571" duration="7196000" />
+      <workItem from="1571821322136" duration="13450000" />
+      <workItem from="1571889549808" duration="29600000" />
+      <workItem from="1571969162255" duration="22256000" />
+      <workItem from="1572154808657" duration="22435000" />
+      <workItem from="1572237722979" duration="2140000" />
+      <workItem from="1572247673288" duration="22539000" />
+      <workItem from="1572324327090" duration="23638000" />
+      <workItem from="1572412638343" duration="1198000" />
+      <workItem from="1572453785022" duration="5662000" />
+      <workItem from="1572507706811" duration="5000" />
+      <workItem from="1572507772297" duration="20076000" />
     </task>
     <servers />
   </component>
@@ -125,13 +145,30 @@
       <screen x="0" y="0" width="1366" height="724" />
     </state>
     <state x="475" y="63" key="FileChooserDialogImpl/0.0.1366.724/1366.0.1280.1024@0.0.1366.724" timestamp="1569612619677" />
+    <state x="267" y="109" key="IDE.errors.dialog" timestamp="1569909414753">
+      <screen x="0" y="0" width="1366" height="724" />
+    </state>
+    <state x="267" y="109" key="IDE.errors.dialog/0.0.1366.724/1366.0.1280.1024@0.0.1366.724" timestamp="1569909414753" />
+    <state x="524" y="290" key="NewPhpFileDialog" timestamp="1570773143288">
+      <screen x="0" y="0" width="1366" height="724" />
+    </state>
+    <state x="524" y="290" key="NewPhpFileDialog/0.0.1366.724/1366.0.1280.1024@0.0.1366.724" timestamp="1570773143288" />
     <state x="194" y="0" key="SettingsEditor" timestamp="1569612856378">
       <screen x="0" y="0" width="1366" height="724" />
     </state>
     <state x="194" y="0" key="SettingsEditor/0.0.1366.724/1366.0.1280.1024@0.0.1366.724" timestamp="1569612856378" />
-    <state x="394" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1569525350584">
+    <state x="394" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1572507772281">
       <screen x="0" y="0" width="1366" height="724" />
     </state>
-    <state x="394" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.724/1366.0.1280.1024@0.0.1366.724" timestamp="1569525350584" />
+    <state x="394" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.724/1366.0.1280.1024@0.0.1366.724" timestamp="1572507772281" />
+    <state x="1735" y="270" key="com.intellij.ide.util.TipDialog/0.0.1366.724/1366.0.1280.1024@1366.0.1280.1024" timestamp="1571969165934" />
+    <state x="382" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1572160877966">
+      <screen x="0" y="0" width="1366" height="724" />
+    </state>
+    <state x="382" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.724/1366.0.1280.1024@0.0.1366.724" timestamp="1572160877966" />
+    <state x="1695" y="131" width="621" height="762" key="find.popup" timestamp="1571978140888">
+      <screen x="1366" y="0" width="1280" height="1024" />
+    </state>
+    <state x="1695" y="131" width="621" height="762" key="find.popup/0.0.1366.724/1366.0.1280.1024@1366.0.1280.1024" timestamp="1571978140888" />
   </component>
 </project>
