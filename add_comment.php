@@ -76,6 +76,7 @@
             $statement = $pdo->prepare($sql);
             $statement->execute($data_comment);
             unset($_SESSION['error']);
+            $_SESSION['flash']['add_comment'] = 1;
             header('Location: /index.php');
         } else {
             header('Location: /index.php');

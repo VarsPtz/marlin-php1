@@ -17,6 +17,11 @@
 
     <!-- Styles -->
     <link href="css/app.css" rel="stylesheet">
+    <style>
+        .error-message {
+            color: #ff0000;
+        }
+    </style>
 </head>
 <body>    
     <div id="app">
@@ -57,9 +62,13 @@
                             <div class="card-header"><h3>Комментарии</h3></div>
 
                             <div class="card-body">
-                              <div class="alert alert-success" role="alert">
-                                Комментарий успешно добавлен
-                              </div>
+
+                              <?php if (isset($_SESSION['flash']['add_comment']) && $_SESSION['flash']['add_comment'] === 1) { ?>
+                                  <div class="alert alert-success" role="alert">
+                                      Комментарий успешно добавлен
+                                  </div>
+                              <?php unset($_SESSION['flash']['add_comment']); } ?>
+
 
                                <?php foreach ($array_comments as $comment) { ?>
                                 <div class="media">
@@ -91,14 +100,14 @@
                                     <label for="exampleFormControlTextarea1">Имя</label>
                                     <input name="name" class="form-control" id="exampleFormControlTextarea1" />
                                     <?php if (!empty($_SESSION['error']['name'])) {
-                                        echo '<p>'.$_SESSION['error']['name'].'</p>';
+                                        echo '<p class="error-message">'.$_SESSION['error']['name'].'</p>';
                                     }; ?>
                                   </div>
                                   <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Сообщение</label>
                                     <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                     <?php if (!empty($_SESSION['error']['comment'])) {
-                                      echo '<p>'.$_SESSION['error']['comment'].'</p>';
+                                      echo '<p class="error-message">'.$_SESSION['error']['comment'].'</p>';
                                     }; ?>
                                   </div>
                                   <button name="btn-add-comment" type="submit" class="btn btn-success">Отправить</button>
@@ -113,14 +122,14 @@
 </body>
 </html>
 
-<?php
-    echo '<pre>';
-    var_dump($_SESSION['error']);
-    echo '</pre>';
-    echo '<pre>';
-    var_dump($_POST);
-    echo '</pre>';
-    echo '<pre>';
-    var_dump($array_comments);
-    echo '</pre>';
-?>
+//<?php
+//    echo '<pre>';
+//    var_dump($_SESSION['error']);
+//    echo '</pre>';
+//    echo '<pre>';
+//    var_dump($_POST);
+//    echo '</pre>';
+//    echo '<pre>';
+//    var_dump($array_comments);
+//    echo '</pre>';
+//?>
