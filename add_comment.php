@@ -1,6 +1,7 @@
 <?php
     session_start();
     require_once 'db.php';
+    require_once 'validate.php';
 
     function security_clean_data($data) {
         $data = trim($data);
@@ -8,11 +9,30 @@
         return $data;
     }
 
+//    function check_not_empty($data) {
+////        if (empty($data)) {
+////            return "Пустая строка";
+////        } else {
+////            return false;
+////        }
+////    }
+////
+////    function check_characters($data) {
+////        if (preg_match('/^[a-zA-Zа-яА-ЯёЁ]++$/u', $data)) {
+////            return "Можно использовать только буквы";
+////        } else {
+////            return false;
+////        }
+////    }
+
     function check_name($name) {
-        if ($name == "" ) {
+        //$check_name_empty = check_not_empty($name);
+        //$check_name_characters = check_characters($name);
+
+        if (check_empty($name)) {
             $_SESSION['error']['name'] = "Вы не ввели имя пользователя";
             return false;
-        } elseif (preg_match('/^[a-zA-Zа-яА-ЯёЁ]++$/u', $name ) === 0) {
+        } elseif (check_characters($name)) {
             $_SESSION['error']['name'] = "Для имени пользователя можно использовать только буквы";
             return false;
         } else {
@@ -24,14 +44,14 @@
     }
 
     function check_comment($comment) {
-        if (!empty($comment)) {
+        if (check_empty($comment)) {
+            $_SESSION['error']['comment'] = "Вы ничего не написали в комментарии.";
+            return false;
+        } else {
             if (isset($_SESSION['error']['comment'])) {
                 unset($_SESSION['error']['comment']);
             }
             return true;
-        } else {
-            $_SESSION['error']['comment'] = "Вы ничего не написали в комментарии.";
-            return false;
         }
     }
 
