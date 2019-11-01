@@ -78,7 +78,7 @@
                                     <h5 class="mt-0">
                                      <?=$comment['name'];?>
                                     </h5>
-<!--                                    <span><small>--><?php //echo date('d/m/Y', strtotime($comment['date_comment'])); ?><!--</small></span>-->
+                                    <span><small><?php echo date('d/m/Y', strtotime($comment['date'])); ?></small></span>
                                     <p>
                                        <?=$comment['comment']; ?>
                                     </p>

@@ -65,14 +65,15 @@
         //Data for new comment in mysql
         $data_comment = [
             'name' => $name,
-            'comment' => $comment
+            'comment' => $comment,
+            'date' => date('Y-m-d')
         ];
 
         //Check incoming data for errors. If no errors, add new comment in to the data base.
         $result_name = check_name($name);
         $result_comment = check_comment($comment);
         if ($result_name && $result_comment) {
-            $sql = "INSERT INTO comments (name, comment) VALUES (:name, :comment)";
+            $sql = "INSERT INTO comments (name, comment, date) VALUES (:name, :comment, :date)";
             $statement = $pdo->prepare($sql);
             $statement->execute($data_comment);
             unset($_SESSION['error']);
