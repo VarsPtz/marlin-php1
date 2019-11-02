@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fa635a37-7ef4-460d-a67f-73bf6c13f191" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add_comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_comment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +115,9 @@
       <workItem from="1572507706811" duration="5000" />
       <workItem from="1572507772297" duration="24054000" />
       <workItem from="1572580837125" duration="6115000" />
-      <workItem from="1572595015713" duration="12150000" />
+      <workItem from="1572595015713" duration="12257000" />
+      <workItem from="1572673997925" duration="1968000" />
+      <workItem from="1572697763987" duration="590000" />
     </task>
     <servers />
   </component>
@@ -161,10 +161,10 @@
       <screen x="0" y="0" width="1366" height="724" />
     </state>
     <state x="194" y="0" key="SettingsEditor/0.0.1366.724/1366.0.1280.1024@0.0.1366.724" timestamp="1569612856378" />
-    <state x="1735" y="270" key="com.intellij.ide.util.TipDialog" timestamp="1572595048056">
-      <screen x="1366" y="0" width="1280" height="1024" />
+    <state x="394" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1572697894146">
+      <screen x="0" y="0" width="1366" height="724" />
     </state>
-    <state x="394" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.724/1366.0.1280.1024@0.0.1366.724" timestamp="1572580877939" />
+    <state x="394" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.724/1366.0.1280.1024@0.0.1366.724" timestamp="1572697894146" />
     <state x="1735" y="270" key="com.intellij.ide.util.TipDialog/0.0.1366.724/1366.0.1280.1024@1366.0.1280.1024" timestamp="1572595048056" />
     <state x="382" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1572160877966">
       <screen x="0" y="0" width="1366" height="724" />
