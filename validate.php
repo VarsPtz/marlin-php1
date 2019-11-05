@@ -46,12 +46,15 @@
         }
     }
 
-    function check_email($email) {
+    function check_email($email, $result) {
         if (check_empty($email)) {
             $_SESSION['error']['email'] = "Вы не ввели e-mail.";
             return false;
         } elseif (validate_email($email)) {
             $_SESSION['error']['email'] = "Вы ввели не корректный почтовый адрес";
+            return false;
+        } elseif ($result) {
+            $_SESSION['error']['email'] = "Почтовый адрес уже зарегистрирован в базе данных.";
             return false;
         } else {
             if (isset($_SESSION['error']['email'])) {
