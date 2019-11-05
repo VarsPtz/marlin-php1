@@ -66,12 +66,15 @@
         if (check_empty($password)) {
             $_SESSION['error']['password'] = "Вы не ввели пароль.";
             return false;
+        } elseif (strlen($password) < 6) {
+            $_SESSION['error']['password'] = "Длина пароля меньше шести символов.";
+            return false;
         } else {
             unset($_SESSION['error']['password']);
             $_SESSION['password'] = $password;
         }
 
-        $_SESSION['password'] = $password;
+        //$_SESSION['password'] = $password;
 
         if (check_empty($password_confirmation)) {
             $_SESSION['error']['password_confirmation'] = "Вы не ввели подтверждение пароля.";
