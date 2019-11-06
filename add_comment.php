@@ -7,7 +7,12 @@
 
     if (isset($_POST['btn-add-comment'])) {
 
-        $name = security_clean_data($_POST['name']);
+        if (!empty($_SESSION['auth_user']['name'])) {
+            $name = security_clean_data($_SESSION['auth_user']['name']);
+        } else {
+            $name = security_clean_data($_POST['name']);
+        }
+
         $comment = security_clean_data($_POST['text']);
 
         //Data for new comment in mysql

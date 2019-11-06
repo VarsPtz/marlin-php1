@@ -21,10 +21,11 @@
         //Check incoming data for errors. If no errors, add new user in to the data base.
 
         $result_name = check_name($name);
-        $result_email = check_email($email, $find_email_result);
+        $result_email = check_email($email);
+        $find_email = find_email($find_email_result);
         $result_password = check_password($password, $password_confirmation);
 
-        if ($result_name && $result_email && $result_password) {
+        if ($result_name && $result_email && $find_email && $result_password) {
 
             //Data for new comment in mysql
             $data_user = [

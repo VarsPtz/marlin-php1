@@ -18,6 +18,28 @@
         return (filter_var($email, FILTER_VALIDATE_EMAIL) === false);
     }
 
+    function missing_email($email) {
+        if (!$email) {
+            $_SESSION['error']['email'] = "Пользователь с данным почтовым адресом не зарегистрирован";
+            return false;
+        } else {
+            unset($_SESSION['error']['email']);
+            return true;
+        }
+    }
+
+    function find_email($email) {
+        if ($email) {
+            $_SESSION['error']['email'] = "Почтовый адрес уже зарегистрирован в базе данных.";
+            return false;
+        } else {
+            unset($_SESSION['error']['email']);
+            return true;
+        }
+    }
+
+
+
     function check_name($name) {
         if (check_empty($name)) {
             $_SESSION['error']['name'] = "Вы не ввели имя пользователя";
@@ -46,15 +68,12 @@
         }
     }
 
-    function check_email($email, $result) {
+    function check_email($email) {
         if (check_empty($email)) {
             $_SESSION['error']['email'] = "Вы не ввели e-mail.";
             return false;
         } elseif (validate_email($email)) {
             $_SESSION['error']['email'] = "Вы ввели не корректный почтовый адрес";
-            return false;
-        } elseif ($result) {
-            $_SESSION['error']['email'] = "Почтовый адрес уже зарегистрирован в базе данных.";
             return false;
         } else {
             if (isset($_SESSION['error']['email'])) {
@@ -91,6 +110,15 @@
                 unset($_SESSION['error']['password_confirmation']);
             }
             return true;
+        }
+    }
+
+    function coincidence_passwords($password1, $password2) {
+        if (password_verify($password1, $password2)) {
+            unset($_SESSION['error']['password']);
+            return true;
+        } else {
+            $_SESSION['error']['password'] = "Пароли не совпадают.";
         }
     }
 

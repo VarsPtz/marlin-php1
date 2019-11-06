@@ -44,7 +44,7 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                             <li class="nav-item">
-                                <a class="nav-link" href="login.html">Login</a>
+                                <a class="nav-link" href="login.php">Login</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="register.php">Register</a>
@@ -97,11 +97,13 @@
                             <div class="card-body">
                                 <form action="/add_comment.php" method="post">
                                     <div class="form-group">
-                                    <label for="exampleFormControlTextarea1">Имя</label>
-                                    <input name="name" class="form-control" id="exampleFormControlTextarea1" />
-                                    <?php if (!empty($_SESSION['error']['name'])) {
-                                        echo '<p class="error-message">'.$_SESSION['error']['name'].'</p>';
-                                    }; ?>
+                                    <?php if (empty($_SESSION['auth_user'])) { ?>
+                                        <label for="exampleFormControlTextarea1">Имя</label>
+                                        <input name="name" class="form-control" id="exampleFormControlTextarea1" />
+                                        <?php if (!empty($_SESSION['error']['name'])) {
+                                            echo '<p class="error-message">'.$_SESSION['error']['name'].'</p>';
+                                        }; ?>
+                                    <?php } ?>
                                   </div>
                                   <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Сообщение</label>
@@ -122,14 +124,15 @@
 </body>
 </html>
 
-//<?php
-//    echo '<pre>';
-//    var_dump($_SESSION['error']);
-//    echo '</pre>';
-//    echo '<pre>';
-//    var_dump($_POST);
-//    echo '</pre>';
-//    echo '<pre>';
-//    var_dump($array_comments);
-//    echo '</pre>';
-//?>
+<?php
+    echo '<pre>';
+    var_dump($_SESSION);
+    echo '</pre>';
+    echo '<pre>';
+    var_dump($_POST);
+    echo '</pre>';
+    echo '<pre>';
+    var_dump($array_comments);
+    echo '</pre>';
+    var_dump($_SESSION['auth_user']['name']);
+?>
