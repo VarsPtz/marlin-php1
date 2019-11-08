@@ -17,6 +17,7 @@
 
     <!-- Styles -->
     <link href="css/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <style>
         .error-message {
             color: #ff0000;
@@ -29,13 +30,36 @@
         .flash-prevention p {
             margin-bottom: 0px;
         }
+        .submenu {
+            list-style-type: none;
+            padding: 5px 20px;
+            position: absolute;
+            z-index: 100;
+            background-color: white;
+            border: 1px solid gray;
+            border-radius: 5px;
+            left: -30px;
+        }
+        .submenu:hover {
+            display: block;
+        }
+        .navbar-nav_first_item {
+            position: relative;
+            padding: 10px 15px;
+        }
+        .navbar-nav_first_item span {
+            font-size: 10px;
+        }
+        .item-hide {
+            display: none;
+        }
     </style>
 </head>
 <body>    
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="index.php">
                     Project
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,12 +68,32 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
+                    <ul class="navbar-nav ml-auto" <?php //hide if user hasn't auth
+                        if (empty($_SESSION['auth_user']) && empty($_COOKIE['user_name'])) {
+                            echo 'style="display: none;"';
+                        }
+                    ?> >
+                    <li class="navbar-nav_first_item">
+                        <?php
+                        if ($_SESSION['auth_user']) {
+                            echo $_SESSION['auth_user']['name']." <span>▼</span>";
+                        } elseif ($_COOKIE['user_name']) {
+                            echo $_COOKIE['user_name'];
+                        }
+                        ?>
+                    <ul class="submenu item-hide">
+                        <li><a href="/profile.html">Профиль</a></li>
+                        <li><a href="/end.php">Выход</a></li>
+                    </ul>
+                    </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto" <?php
+                        if (!empty($_SESSION['auth_user']) || !empty($_COOKIE['user_name'])) {
+                            echo 'style="display: none;"';
+                        }
+                    ?>>
                         <!-- Authentication Links -->
                             <li class="nav-item">
                                 <a class="nav-link" href="login.php">Login</a>
@@ -137,6 +181,8 @@
             </div>
         </main>
     </div>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
 

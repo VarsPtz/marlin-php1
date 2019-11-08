@@ -45,10 +45,12 @@
                 if ($_POST['remember'] == 1) {
                     setcookie("user_email", $email, time() + 2592000);//one month
                     setcookie("user_pwd", $find_email_result['password'], time() + 2592000);//one month
+                    setcookie("user_name", $find_email_result['name'], time() + 2592000);//one month
                 }
             } else {
                 setcookie("user_email", '', time() - 2592000);
                 setcookie("user_pwd", '', time() - 2592000);
+                setcookie("user_name", '', time() - 2592000);
             }
             header('Location: /index.php');
         } else {
