@@ -20,34 +20,43 @@
         //$result_email = check_email($email);
 
         if (check_email($email)) {
-            if (missing_email($find_email_result)) {
-                if (!empty($password)) {
-                    unset($_SESSION['error']['password']);
-                    if (coincidence_passwords($password, $find_email_result['password'])) {
-                        $_SESSION['auth_user'] = $find_email_result;
-                        if (isset($_POST['remember'])) {
-                            if ($_POST['remember'] == 1) {
-                                setcookie("user_email", $email, time() + 2592000);//one month
-                                setcookie("user_pwd", $find_email_result['password'], time() + 2592000);//one month
-                            }
-                        } else {
-                            setcookie("user_email", '', time() - 2592000);
-                            setcookie("user_pwd", '', time() - 2592000);
-                        }
-                        header('Location: /index.php');
-                    } else {
-                        header('Location: /login.php');
-                    }
-                } else {
-                    $_SESSION['error']['password'] = "Вы не ввели пароль.";
-                    header('Location: /login.php');
-                }
-            } else {
-                header('Location: /login.php');
-            }
+           $error_status = false;
         } else {
             header('Location: /login.php');
         }
+
+        if (missing_email($find_email_result)) {
+            $error_status = false;
+        } else {
+            header('Location: /login.php');
+        }
+
+        if (!empty($password)) {
+            unset($_SESSION['error']['password']);
+            $error_status = false;
+        } else {
+            $_SESSION['error']['password'] = "Вы не ввели пароль.";
+            header('Location: /login.php');
+        }
+
+        if (coincidence_passwords($password, $find_email_result['password'])) {
+            $_SESSION['auth_user'] = $find_email_result;
+            if (isset($_POST['remember'])) {
+                if ($_POST['remember'] == 1) {
+                    setcookie("user_email", $email, time() + 2592000);//one month
+                    setcookie("user_pwd", $find_email_result['password'], time() + 2592000);//one month
+                }
+            } else {
+                setcookie("user_email", '', time() - 2592000);
+                setcookie("user_pwd", '', time() - 2592000);
+            }
+            header('Location: /index.php');
+        } else {
+            header('Location: /login.php');
+        }
+
+
+
     } else {
         header('Location: /login.php');
     }
