@@ -4,7 +4,7 @@
     require_once 'validate.php';
 
     if (isset($_POST['btn-authorization-user'])) {
-        $email = security_clean_data($_POST['remember']);
+        $email = security_clean_data($_POST['email']);
         $password = $_POST['password'];
 
         //Prepare data to find email in data base.
@@ -25,6 +25,15 @@
                     unset($_SESSION['error']['password']);
                     if (coincidence_passwords($password, $find_email_result['password'])) {
                         $_SESSION['auth_user'] = $find_email_result;
+                        if (isset($_POST['remember'])) {
+                            if ($_POST['remember'] == 1) {
+                                setcookie("user_email", $email, time() + 2592000);//one month
+                                setcookie("user_pwd", $find_email_result['password'], time() + 2592000);//one month
+                            }
+                        } else {
+                            setcookie("user_email", '', time() - 2592000);
+                            setcookie("user_pwd", '', time() - 2592000);
+                        }
                         header('Location: /index.php');
                     } else {
                         header('Location: /login.php');
@@ -46,8 +55,15 @@
 echo "<pre>";
 var_dump($_SESSION);
 echo "</pre>";
+echo "POST<br>";
 echo "<pre>";
 var_dump($_POST);
 echo "</pre>";
+echo "COOKIE<br>";
+echo "<pre>";
+var_dump($_COOKIE);
+echo "</pre>";
+
+
 
 ?>

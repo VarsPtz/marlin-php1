@@ -61,7 +61,7 @@
                                         <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
 
                                         <div class="col-md-6">
-                                            <input id="email" type="email" class="form-control @error('name') <?php if (isset($_SESSION['error']['email'])) {echo 'is-invalid';} ?> @enderror" name="remember"  autocomplete="email" autofocus value="<?php if (isset($_SESSION['email'])) {echo $_SESSION['email'];}?>">
+                                            <input id="email" type="email" class="form-control @error('name') <?php if (isset($_SESSION['error']['email'])) {echo 'is-invalid';} ?> @enderror" name="email"  autocomplete="email" autofocus value="<?php if (isset($_SESSION['email'])) {echo $_SESSION['email'];}?>">
                                             <?php if (isset($_SESSION['error']['email'])) { ?>
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong><?=$_SESSION['error']['email']?></strong>
@@ -86,7 +86,7 @@
                                     <div class="form-group row">
                                         <div class="col-md-6 offset-md-4">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="remember" id="remember" >
+                                                <input class="form-check-input" type="checkbox" name="remember" id="remember" value="1">
 
                                                 <label class="form-check-label" for="remember">
                                                     Remember Me

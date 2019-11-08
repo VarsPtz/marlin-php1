@@ -4,11 +4,9 @@
     <list default="true" id="fa635a37-7ef4-460d-a67f-73bf6c13f191" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/add_comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/authorization_user.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validate.php" beforeDir="false" afterPath="$PROJECT_DIR$/validate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +71,12 @@
   <component name="ServiceViewManager">
     <option name="viewStates">
       <list>
-        <serviceView />
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -127,7 +130,9 @@
       <workItem from="1572783969534" duration="26426000" />
       <workItem from="1572887365440" duration="2875000" />
       <workItem from="1572949693433" duration="12595000" />
-      <workItem from="1573024372056" duration="27152000" />
+      <workItem from="1573024372056" duration="27926000" />
+      <workItem from="1573115834517" duration="16004000" />
+      <workItem from="1573189500134" duration="9238000" />
     </task>
     <servers />
   </component>
@@ -171,11 +176,11 @@
       <screen x="0" y="0" width="1366" height="724" />
     </state>
     <state x="194" y="0" key="SettingsEditor/0.0.1366.724/1366.0.1280.1024@0.0.1366.724" timestamp="1569612856378" />
-    <state x="394" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1573024410214">
-      <screen x="0" y="0" width="1366" height="724" />
+    <state x="1735" y="270" key="com.intellij.ide.util.TipDialog" timestamp="1573190656990">
+      <screen x="1366" y="0" width="1280" height="1024" />
     </state>
-    <state x="394" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.724/1366.0.1280.1024@0.0.1366.724" timestamp="1573024410214" />
-    <state x="1735" y="270" key="com.intellij.ide.util.TipDialog/0.0.1366.724/1366.0.1280.1024@1366.0.1280.1024" timestamp="1572595048056" />
+    <state x="394" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.724/1366.0.1280.1024@0.0.1366.724" timestamp="1573117285646" />
+    <state x="1735" y="270" key="com.intellij.ide.util.TipDialog/0.0.1366.724/1366.0.1280.1024@1366.0.1280.1024" timestamp="1573190656990" />
     <state x="382" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1572160877966">
       <screen x="0" y="0" width="1366" height="724" />
     </state>
@@ -188,16 +193,5 @@
       <screen x="0" y="0" width="1366" height="724" />
     </state>
     <state x="328" y="82" width="700" height="530" key="recent.locations.popup/0.0.1366.724/1366.0.1280.1024@0.0.1366.724" timestamp="1572596317474" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/index.php</url>
-          <line>126</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

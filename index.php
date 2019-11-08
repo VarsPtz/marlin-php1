@@ -21,6 +21,14 @@
         .error-message {
             color: #ff0000;
         }
+        .flash-prevention {
+            border-radius: 4px;
+            background-color: #AFEEEE;
+            padding: 10px 20px;
+        }
+        .flash-prevention p {
+            margin-bottom: 0px;
+        }
     </style>
 </head>
 <body>    
@@ -96,15 +104,18 @@
 
                             <div class="card-body">
                                 <form action="/add_comment.php" method="post">
-                                    <div class="form-group">
-                                    <?php if (empty($_SESSION['auth_user'])) { ?>
-                                        <label for="exampleFormControlTextarea1">Имя</label>
-                                        <input name="name" class="form-control" id="exampleFormControlTextarea1" />
-                                        <?php if (!empty($_SESSION['error']['name'])) {
-                                            echo '<p class="error-message">'.$_SESSION['error']['name'].'</p>';
-                                        }; ?>
-                                    <?php } ?>
-                                  </div>
+<!--                                    <div class="form-group">-->
+<!--                                    --><?php //if (!empty($_SESSION['auth_user']) || !empty($_COOKIE['user_email'])) { ?>
+<!--                                        if we have the authorized user, do nothing-->
+<!--                                    --><?php //} else { ?>
+<!--                                        <label for="exampleFormControlTextarea1">Имя</label>-->
+<!--                                        <input name="name" class="form-control" id="exampleFormControlTextarea1" />-->
+<!--                                        --><?php //if (!empty($_SESSION['error']['name'])) {
+//                                            echo '<p class="error-message">'.$_SESSION['error']['name'].'</p>';
+//                                        }; ?>
+<!--                                    --><?php //} ?>
+<!--                                  </div>-->
+                                  <?php if (!empty($_SESSION['auth_user']) || !empty($_COOKIE['user_email'])) { ?>
                                   <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Сообщение</label>
                                     <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
@@ -113,6 +124,11 @@
                                     }; ?>
                                   </div>
                                   <button name="btn-add-comment" type="submit" class="btn btn-success">Отправить</button>
+                                  <?php } else { ?>
+                                    <div class="flash-prevention">
+                                        <p>Чтобы оставить комментарий <a href="/login.php">авторизуйтесь</a></p>
+                                    </div>
+                                  <?php } ?>
                                 </form>
                             </div>
                         </div>
@@ -125,14 +141,17 @@
 </html>
 
 <?php
-    echo '<pre>';
-    var_dump($_SESSION);
-    echo '</pre>';
-    echo '<pre>';
-    var_dump($_POST);
-    echo '</pre>';
-    echo '<pre>';
-    var_dump($array_comments);
-    echo '</pre>';
-    var_dump($_SESSION['auth_user']['name']);
+echo "<pre>";
+var_dump($_SESSION);
+echo "</pre>";
+echo "POST<br>";
+echo "<pre>";
+var_dump($_POST);
+echo "</pre>";
+echo "COOKIE<br>";
+echo "<pre>";
+var_dump($_COOKIE);
+echo "</pre>";
+echo "auth_user - name <br>";
+var_dump($_SESSION['auth_user']['name']);
 ?>
