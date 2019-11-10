@@ -75,7 +75,7 @@
                     ?> >
                     <li class="navbar-nav_first_item">
                         <?php
-                        if ($_SESSION['auth_user']) {
+                        if (!empty($_SESSION['auth_user'])) {
                             echo $_SESSION['auth_user']['name']." <span>▼</span>";
                         } elseif ($_COOKIE['user_name']) {
                             echo $_COOKIE['user_name'];

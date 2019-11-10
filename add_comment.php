@@ -9,7 +9,7 @@
 
         if (!empty($_SESSION['auth_user']['name'])) {
             $name = security_clean_data($_SESSION['auth_user']['name']);
-            $user_id = $_SESSION['auth_user']['id'];
+            $user_id = $_SESSION['auth_user']['user_id'];
         } elseif (!empty($_COOKIE['user_email'])) {
             $email = $_COOKIE['user_email'];
             $password = $_COOKIE['user_pwd'];
@@ -23,7 +23,7 @@
 
             if ($email == $find_email_result['email'] && $password == $find_email_result['password']) {
                 $name = $find_email_result['name'];
-                $user_id = $find_email_result['id'];
+                $user_id = $find_email_result['user_id'];
                 $_SESSION['auth_user'] = $find_email_result;
             }
         } else {
@@ -35,7 +35,6 @@
         //Data for new comment in mysql
         $data_comment = [
             'user_id' => $user_id,
-            'name' => $name,
             'comment' => $comment,
             'date' => date('Y-m-d')
         ];
@@ -44,7 +43,7 @@
         $result_comment = check_comment($comment);
 
         if ($result_comment && $name != false) {
-            $sql = "INSERT INTO comments (user_id, name, comment, date) VALUES (:user_id, :name, :comment, :date)";
+            $sql = "INSERT INTO comments (user_id, comment, date) VALUES (:user_id, :comment, :date)";
             $statement = $pdo->prepare($sql);
             $statement->execute($data_comment);
             unset($_SESSION['error']);
