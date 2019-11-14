@@ -77,12 +77,12 @@
                         <?php
                         if (!empty($_SESSION['auth_user'])) {
                             echo $_SESSION['auth_user']['name']." <span>▼</span>";
-                        } elseif ($_COOKIE['user_name']) {
-                            echo $_COOKIE['user_name'];
+                        } elseif (!empty($_COOKIE['user_name'])) {
+                            echo $_COOKIE['user_name']." <span>▼</span>";
                         }
                         ?>
                     <ul class="submenu item-hide">
-                        <li><a href="/profile.html">Профиль</a></li>
+                        <li><a href="/profile.php">Профиль</a></li>
                         <li><a href="/end.php">Выход</a></li>
                     </ul>
                     </li>
@@ -148,17 +148,6 @@
 
                             <div class="card-body">
                                 <form action="/add_comment.php" method="post">
-<!--                                    <div class="form-group">-->
-<!--                                    --><?php //if (!empty($_SESSION['auth_user']) || !empty($_COOKIE['user_email'])) { ?>
-<!--                                        if we have the authorized user, do nothing-->
-<!--                                    --><?php //} else { ?>
-<!--                                        <label for="exampleFormControlTextarea1">Имя</label>-->
-<!--                                        <input name="name" class="form-control" id="exampleFormControlTextarea1" />-->
-<!--                                        --><?php //if (!empty($_SESSION['error']['name'])) {
-//                                            echo '<p class="error-message">'.$_SESSION['error']['name'].'</p>';
-//                                        }; ?>
-<!--                                    --><?php //} ?>
-<!--                                  </div>-->
                                   <?php if (!empty($_SESSION['auth_user']) || !empty($_COOKIE['user_email'])) { ?>
                                   <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Сообщение</label>

@@ -122,4 +122,25 @@
         }
     }
 
+    function checking_for_image_type($file_ext) {
+        $types_of_images = ['bmp', 'jpg', 'gif', 'png'];
+        if (in_array($file_ext, $types_of_images)) {
+            unset($_SESSION['error']['image_type']);
+            return true;
+        } else {
+            $_SESSION['error']['image_type'] = "Загружаемый тип файла не поддерживается.";
+            return false;
+        }
+    }
+
+    function checking_file_size ($file_size) {
+        if ($file_size <= 3145728) {
+            unset($_SESSION['error']['image_size']);
+            return true;
+        } else {
+            $_SESSION['error']['image_size'] = "Размер файла превышает допустимый (3 Мегабайта).";
+            return false;
+        }
+    }
+
 ?>

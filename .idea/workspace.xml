@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="fa635a37-7ef4-460d-a67f-73bf6c13f191" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add_comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/authorization_user.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate.php" beforeDir="false" afterPath="$PROJECT_DIR$/validate.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +57,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunManager">
     <configuration name="index.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/marlin/index.php" useBuiltInWebServerPort="true">
@@ -132,7 +134,14 @@
       <workItem from="1573024372056" duration="27926000" />
       <workItem from="1573115834517" duration="16004000" />
       <workItem from="1573189500134" duration="27150000" />
-      <workItem from="1573395174051" duration="8502000" />
+      <workItem from="1573395174051" duration="9851000" />
+      <workItem from="1573452123860" duration="2009000" />
+      <workItem from="1573493382802" duration="1831000" />
+      <workItem from="1573531793553" duration="5971000" />
+      <workItem from="1573540007644" duration="12982000" />
+      <workItem from="1573567503214" duration="15975000" />
+      <workItem from="1573639979770" duration="16723000" />
+      <workItem from="1573708630831" duration="6357000" />
     </task>
     <servers />
   </component>
@@ -172,15 +181,15 @@
       <screen x="0" y="0" width="1366" height="724" />
     </state>
     <state x="524" y="290" key="NewPhpFileDialog/0.0.1366.724/1366.0.1280.1024@0.0.1366.724" timestamp="1570773143288" />
-    <state x="194" y="0" key="SettingsEditor" timestamp="1569612856378">
+    <state x="194" y="0" key="SettingsEditor" timestamp="1573548200000">
       <screen x="0" y="0" width="1366" height="724" />
     </state>
-    <state x="194" y="0" key="SettingsEditor/0.0.1366.724/1366.0.1280.1024@0.0.1366.724" timestamp="1569612856378" />
-    <state x="394" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1573395174043">
-      <screen x="0" y="0" width="1366" height="724" />
+    <state x="194" y="0" key="SettingsEditor/0.0.1366.724/1366.0.1280.1024@0.0.1366.724" timestamp="1573548200000" />
+    <state x="1735" y="270" key="com.intellij.ide.util.TipDialog" timestamp="1573708950388">
+      <screen x="1366" y="0" width="1280" height="1024" />
     </state>
-    <state x="394" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.724/1366.0.1280.1024@0.0.1366.724" timestamp="1573395174043" />
-    <state x="1735" y="270" key="com.intellij.ide.util.TipDialog/0.0.1366.724/1366.0.1280.1024@1366.0.1280.1024" timestamp="1573190656990" />
+    <state x="394" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.724/1366.0.1280.1024@0.0.1366.724" timestamp="1573639980293" />
+    <state x="1735" y="270" key="com.intellij.ide.util.TipDialog/0.0.1366.724/1366.0.1280.1024@1366.0.1280.1024" timestamp="1573708950388" />
     <state x="382" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1572160877966">
       <screen x="0" y="0" width="1366" height="724" />
     </state>
