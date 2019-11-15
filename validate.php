@@ -84,6 +84,19 @@
         }
     }
 
+    function check_one_password ($password, $name) {
+        if (check_empty($password)) {
+            $_SESSION['error'][$name] = "Вы не ввели пароль.";
+            return false;
+        } elseif (strlen($password) < 6) {
+            $_SESSION['error'][$name] = "Длина пароля меньше шести символов.";
+            return false;
+        } else {
+            unset($_SESSION['error'][$name]);
+            return true;
+        }
+    }
+
     function check_password($password, $password_confirmation) {
         if (check_empty($password)) {
             $_SESSION['error']['password'] = "Вы не ввели пароль.";

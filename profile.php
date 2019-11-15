@@ -103,9 +103,11 @@
                         <div class="card-header"><h3>Профиль пользователя</h3></div>
 
                         <div class="card-body">
+                          <?php if (isset($_SESSION['flash']['change_user']) && $_SESSION['flash']['change_user'] === 1) { ?>
                           <div class="alert alert-success" role="alert">
                             Профиль успешно обновлен
                           </div>
+                          <?php unset($_SESSION['flash']['change_user']); } ?>
 
                             <form action="/edit_user.php" method="post" enctype="multipart/form-data">
                                 <div class="row">
@@ -182,29 +184,46 @@
                         <div class="card-header"><h3>Безопасность</h3></div>
 
                         <div class="card-body">
+                          <?php if (isset($_SESSION['flash']['change_password']) && $_SESSION['flash']['change_password'] === 1) { ?>
                             <div class="alert alert-success" role="alert">
                                 Пароль успешно обновлен
                             </div>
+                          <?php unset($_SESSION['flash']['change_password']); } ?>
 
-                            <form action="/profile/password" method="post" enctype="multipart/form-data">
+                            <form action="/edit_password.php" method="post" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <label for="exampleFormControlInput1">Current password</label>
-                                            <input type="password" name="current" class="form-control" id="exampleFormControlInput1">
+                                            <input type="password" name="password_current" class="form-control <?php if (!empty($_SESSION['error']['password_current'])) {echo 'is-invalid';} ?> @enderror" id="exampleFormControlInput1">
+                                            <?php if (!empty($_SESSION['error']['password_current'])) { ?>
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong><?=$_SESSION['error']['password_current']?></strong>
+                                                </span>
+                                            <?php } ?>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="exampleFormControlInput1">New password</label>
-                                            <input type="password" name="password" class="form-control" id="exampleFormControlInput1">
+                                            <input type="password" name="password" class="form-control <?php if (!empty($_SESSION['error']['password'])) {echo 'is-invalid';} ?> @enderror" id="exampleFormControlInput1">
+                                            <?php if (!empty($_SESSION['error']['password'])) { ?>
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong><?=$_SESSION['error']['password']?></strong>
+                                                </span>
+                                            <?php } ?>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="exampleFormControlInput1">Password confirmation</label>
-                                            <input type="password" name="password_confirmation" class="form-control" id="exampleFormControlInput1">
+                                            <input type="password" name="password_confirmation" class="form-control <?php if (!empty($_SESSION['error']['password_confirmation'])) {echo 'is-invalid';} ?> @enderror" id="exampleFormControlInput1">
+                                            <?php if (!empty($_SESSION['error']['password_confirmation'])) { ?>
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong><?=$_SESSION['error']['password_confirmation']?></strong>
+                                                </span>
+                                            <?php } ?>
                                         </div>
 
-                                        <button class="btn btn-success" name="btn-edit-password">Submit</button>
+                                        <button class="btn btn-success" name="btn-password-edit">Submit</button>
                                     </div>
                                 </div>
                             </form>
@@ -219,3 +238,15 @@
     <script src="js/main.js"></script>
 </body>
 </html>
+
+<?php
+echo "<pre>";
+var_dump($_POST);
+echo "</pre>";
+echo "<pre>";
+var_dump($_SESSION);
+echo "</pre>";
+echo "<pre>";
+var_dump($_COOKIE);
+echo "</pre>";
+?>

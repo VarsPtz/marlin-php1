@@ -89,7 +89,7 @@
         if ($name_new != $find_id_result['user_id']) {
             $sql_name = "UPDATE `users` SET name = :name WHERE user_id = :user_id";
             $sql_name_in_db_prepared = $pdo->prepare($sql_name);
-            $arr_name = [g
+            $arr_name = [
                 ':name' => $name_new,
                 ':user_id' => $find_id_result['user_id']
             ];
@@ -123,22 +123,22 @@
                 setcookie("user_email", '', time() - 2592000);
                 setcookie("user_email", $name_new, time() + 2592000);//one month
             }
+
+            unset($_SESSION['error']);
+            $_SESSION['flash']['change_user'] = 1;
+            header('Location: /profile.php');
         }
-
-
-
-
     } else {
         header('Location: /profile.php');
     }
 
-    echo "<pre>";
-    var_dump($_SESSION);
-    echo "</pre>";
-    echo "<pre>";
-    var_dump($_COOKIE);
-    echo "</pre>";
-    echo "<pre>";
-    var_dump($_FILES);
-    echo "</pre>";
+//    echo "<pre>";
+//    var_dump($_SESSION);
+//    echo "</pre>";
+//    echo "<pre>";
+//    var_dump($_COOKIE);
+//    echo "</pre>";
+//    echo "<pre>";
+//    var_dump($_FILES);
+//    echo "</pre>";
 ?>
