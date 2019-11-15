@@ -1,3 +1,25 @@
+<?php
+session_start();
+if (empty($_SESSION['auth_user']['user_id']) && empty($_COOKIE['user_id'])) {
+
+    if (!empty($_SESSION['auth_user']['user_id'])) {
+        $user_id = $_SESSION['auth_user']['user_id'];
+    } elseif (!empty($_COOKIE['user_id'])) {
+        $user_id = $_COOKIE['user_id'];
+    }
+
+    //Prepare data to find id in data base.
+    $sql_id_in_db = "SELECT * FROM `users` WHERE user_id = :user_id";
+    $sql_id_in_db_prepared = $pdo->prepare($sql_id_in_db);
+    $find_id = [':user_id' => $user_id];
+    $sql_id_in_db_prepared->execute($find_id);
+    $find_id_result = $sql_id_in_db_prepared->fetch();
+
+    if ($find_id_result['role'] != 'admin') {
+        header('Location: /login.php');
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,12 +34,51 @@
 
     <!-- Styles -->
     <link href="css/app.css" rel="stylesheet">
+    <style>
+        .error-message {
+            color: #ff0000;
+        }
+        .flash-prevention {
+            border-radius: 4px;
+            background-color: #AFEEEE;
+            padding: 10px 20px;
+        }
+        .flash-prevention p {
+            margin-bottom: 0px;
+        }
+        .submenu {
+            list-style-type: none;
+            padding: 5px 20px;
+            position: absolute;
+            z-index: 100;
+            background-color: white;
+            border: 1px solid gray;
+            border-radius: 5px;
+            left: -30px;
+        }
+        .submenu:hover {
+            display: block;
+        }
+        .navbar-nav_first_item {
+            position: relative;
+            padding: 10px 15px;
+        }
+        .navbar-nav_first_item span {
+            font-size: 10px;
+        }
+        .item-hide {
+            display: none;
+        }
+        .form-control[type="file"] {
+            padding: 4px;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="index.php">
                     Project
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,20 +86,20 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                            <li class="nav-item">
-                                <a class="nav-link" href="login.html">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="register.html">Register</a>
-                            </li>
+                        <li class="navbar-nav_first_item">
+                            <?php
+                            if (!empty($_SESSION['auth_user'])) {
+                                echo $_SESSION['auth_user']['name']." <span>▼</span>";
+                            } elseif (!empty($_COOKIE['user_name'])) {
+                                echo $_COOKIE['user_name']." <span>▼</span>";
+                            }
+                            ?>
+                            <ul class="submenu item-hide">
+                                <li><a href="/profile.php">Профиль</a></li>
+                                <li><a href="/end.php">Выход</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -88,5 +149,7 @@
             </div>
         </main>
     </div>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
