@@ -47,7 +47,7 @@
                     setcookie("user_pwd", $find_email_result['password'], time() + 2592000);//one month
                     setcookie("user_name", $find_email_result['name'], time() + 2592000);//one month
                     setcookie("user_image", $find_email_result['image'], time() + 2592000);//one month
-                    setcookie("user_id", $find_email_result['image'], time() + 2592000);//one month
+                    setcookie("user_id", $find_email_result['user_id'], time() + 2592000);//one month
                 }
             } else {
                 setcookie("user_email", '', time() - 2592000);

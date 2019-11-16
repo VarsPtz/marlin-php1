@@ -123,9 +123,9 @@
 
 
                                <?php foreach ($array_comments as $comment) { ?>
+                                <?php if ($comment['show'] == 1) { ?>
                                 <div class="media">
-<!--                                  <img src="--><?php //echo $comment['user_img'];
-//                                            ?><!--" class="mr-3" alt="..." width="64" height="64">-->
+                                  <img src="img/<?php echo $comment['image']; ?>" class="mr-3" alt="..." width="64" height="64">
                                   <div class="media-body">
                                     <h5 class="mt-0">
                                      <?=$comment['name'];?>
@@ -136,8 +136,8 @@
                                     </p>
                                   </div>
                                 </div>
+                                <?php } ?>
                                <?php } ?>
-
                             </div>
                         </div>
                     </div>

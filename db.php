@@ -25,7 +25,7 @@
     }
 
     //$sql_query = "SELECT `name`, `comment`, `date` FROM `comments` WHERE `id`>0 ORDER BY id DESC";
-    $sql_query = "SELECT users.name, comments.comment, comments.date FROM comments LEFT JOIN users ON users.user_id = comments.user_id ORDER BY comments.id DESC";
+    $sql_query = "SELECT users.user_id, users.name, users.image, users.role, comments.id, comments.comment, comments.date, comments.show FROM comments LEFT JOIN users ON users.user_id = comments.user_id ORDER BY comments.id DESC";
     $sql_query_prepared = $pdo->prepare($sql_query);
     $sql_query_prepared->execute();
     $array_comments = $sql_query_prepared->fetchAll(PDO::FETCH_ASSOC);

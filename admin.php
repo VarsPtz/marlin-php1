@@ -1,5 +1,8 @@
 <?php
 session_start();
+require_once 'db.php';
+require_once 'validate.php';
+
 if (empty($_SESSION['auth_user']['user_id']) && empty($_COOKIE['user_id'])) {
 
     if (!empty($_SESSION['auth_user']['user_id'])) {
@@ -72,6 +75,9 @@ if (empty($_SESSION['auth_user']['user_id']) && empty($_COOKIE['user_id'])) {
         .form-control[type="file"] {
             padding: 4px;
         }
+        form {
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -125,21 +131,33 @@ if (empty($_SESSION['auth_user']['user_id']) && empty($_COOKIE['user_id'])) {
                                     </thead>
 
                                     <tbody>
+                                        <?php foreach ($array_comments as $comment) { ?>
                                         <tr>
                                             <td>
-                                                <img src="img/no-user.jpg" alt="" class="img-fluid" width="64" height="64">
+                                                <img src="img/<?=$comment['image']?>" alt="" class="img-fluid" width="64" height="64">
                                             </td>
-                                            <td>John</td>
-                                            <td>12/08/2045</td>
-                                            <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta aut quam cumque libero reiciendis, dolor.</td>
+                                            <td><?=$comment['name'];?></td>
+                                            <td><?php echo date('d/m/Y', strtotime($comment['date'])); ?></td>
+                                            <td> <?=$comment['comment']; ?></td>
                                             <td>
-                                                    <a href="" class="btn btn-success">Разрешить</a>
-
-                                                    <a href="" class="btn btn-warning">Запретить</a>
-
-                                                <a href="" onclick="return confirm('are you sure?')" class="btn btn-danger">Удалить</a>
+                                                <?php if ($comment['show'] == 0) { ?>
+                                                    <form action="/resolve_comment.php" method="POST">
+                                                        <button class="btn btn-success" type="submit" name="comment_id" value="<?=$comment['id']?>">Разрешить</button>
+                                                    </form>
+<!--                                                    <a href="/resolve_comment.php" class="btn btn-success">Разрешить</a>-->
+                                                <?php } elseif ($comment['show'] == 1) { ?>
+                                                    <form action="/forbid_comment.php" method="POST">
+                                                        <button class="btn btn-warning" type="submit" name="comment_id" value="<?=$comment['id']?>">Запретить</button>
+                                                    </form>
+<!--                                                    <a href="/forbid_comment.php" class="btn btn-warning">Запретить</a>-->
+                                                <?php } ?>
+                                                <form action="/delete_comment.php" method="POST">
+                                                    <button class="btn btn-danger" onclick="return confirm('are you sure?')" type="submit" name="comment_id" value="<?=$comment['id']?>">Удалить</button>
+                                                </form>
+<!--                                                <a href="/delete_comment.php" onclick="return confirm('are you sure?')" class="btn btn-danger">Удалить</a>-->
                                             </td>
                                         </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -153,3 +171,12 @@ if (empty($_SESSION['auth_user']['user_id']) && empty($_COOKIE['user_id'])) {
     <script src="js/main.js"></script>
 </body>
 </html>
+
+<?php
+echo "<pre>";
+var_dump($_SESSION);
+echo "</pre>";
+echo "<pre>";
+var_dump($_COOKIE);
+echo "</pre>";
+?>
